@@ -1,4 +1,3 @@
-// src/api/exchangeApi.ts
 import axios from 'axios';
 
 export const getExchangeRates = async (baseCurrency: string) => {
