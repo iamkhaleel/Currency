@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-const Onboarding = () => {
+const OnboardingSecond = () => {
   return (
     <View style={{ backgroundColor: 'white', height: '60%' }}>
       <Text> </Text>
@@ -34,19 +34,9 @@ const Onboarding = () => {
           }}
         >
           {' '}
-          Know Your Currency{' '}
+          Let's get you started{' '}
         </Text>
-        <Text
-          style={{
-            fontWeight: 500,
-            color: 'white',
-            fontFamily: 'AvenirNext-Bold',
-            fontSize: 30,
-            alignSelf: 'center',
-          }}
-        >
-          Rate at FingerTip!{' '}
-        </Text>
+
         <Text
           style={{
             marginTop: 30,
@@ -57,7 +47,7 @@ const Onboarding = () => {
             fontFamily: 'Avenir',
           }}
         >
-          SIMPLE, FAST AND RELIABLE{' '}
+          Allow Access to your location ?{' '}
         </Text>
         <TouchableOpacity>
           <View
@@ -69,11 +59,27 @@ const Onboarding = () => {
               borderRadius: 100,
               margin: 40,
             }}
-          ></View>
+          >
+            {' '}
+            <Text style={{ alignSelf: 'center', marginTop: 16 }}> Yes </Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <View
+            style={{
+              backgroundColor: 'white',
+              width: 60,
+              height: 60,
+              alignSelf: 'center',
+              borderRadius: 100,
+            }}
+          >
+            <Text style={{ alignSelf: 'center', marginTop: '30%' }}> No </Text>
+          </View>
         </TouchableOpacity>
       </View>
     </View>
   );
 };
 
-export default Onboarding;
+export default OnboardingSecond;

@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, TextInput, StyleSheet, Button } from 'react-native';
 import { getExchangeRates } from '../api/exchangeApi';
 import CurrencySelector from '../components/CurrencySelector';
-import { SafeAreaView } from 'react-native/types_generated/index';
 
 const HomeScreen = () => {
   const [amount, setAmount] = useState('1');
@@ -31,22 +30,20 @@ const HomeScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}> Currency Converter</Text>
+    <View style={{ backgroundColor: 'white', height: '100%' }}>
+      <Text
+        style={{
+          fontFamily: 'AvenirNext-Bold',
+          fontSize: 20,
+          marginTop: 70,
+          alignSelf: 'center',
+        }}
+      >
+        {' '}
+        Convert Currency
+      </Text>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: { padding: 20, marginTop: 50 },
-  input: { borderWidth: 1, padding: 10, marginBottom: 20 },
-  result: { fontSize: 18, marginTop: 20 },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-    alignSelf: 'center',
-  },
-});
 
 export default HomeScreen;
