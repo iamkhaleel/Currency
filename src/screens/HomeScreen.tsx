@@ -48,6 +48,24 @@ const HomeScreen = () => {
       setAmount('');
     } else if (key === '.') {
       if (!amount.includes('.')) setAmount(amount + '.');
+    } else if (['+', '-', '×', '÷'].includes(key)) {
+      // Prevent two operators in a row
+      if (amount && !['+', '-', '×', '÷'].includes(amount.slice(-1))) {
+        setAmount(amount + key);
+      }
+    } else if (key === '=') {
+      // Replace × and ÷ with * and /
+      let expression = amount.replace(/×/g, '*').replace(/÷/g, '/');
+      try {
+        // eslint-disable-next-line no-eval
+        const result = eval(expression);
+        if (!isNaN(result)) {
+          setAmount(result.toString());
+        }
+      } catch {
+        // Invalid expression
+        setAmount('');
+      }
     } else {
       setAmount(amount + key);
     }
